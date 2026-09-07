@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NagarMitra AI</title>
+
+    <!-- CSS later add chestham -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="logo">
+            🏙️ NagarMitra <span>AI</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#report">Report Problem</a>
+            <a href="#tracking">Track</a>
+            <a href="#safety">Safety</a>
+        </nav>
+
+        <div class="language">
+            <button>English</button>
+            <button>తెలుగు</button>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🤖 AI POWERED CIVIC ASSISTANT
+            </div>
+
+            <h1>
+                Speak a Problem.
+                <br>
+                <span>Get the Solution.</span>
+            </h1>
+
+            <p>
+                NagarMitra AI helps citizens report everyday problems,
+                identify the right department and generate actionable
+                complaints using Artificial Intelligence.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#report" class="primary-btn">
+                    📝 Report a Problem
+                </a>
+
+                <a href="#tracking" class="secondary-btn">
+                    🔍 Track Complaint
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="section-title">
+
+            <h2>How NagarMitra AI Helps</h2>
+
+            <p>
+                One smart platform for everyday citizen problems.
+            </p>
+
+        </div>
+
+
+        <div class="feature-container">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🗣️
+                </div>
+
+                <h3>Voice Complaint</h3>
+
+                <p>
+                    Speak your problem in Telugu or English
+                    instead of typing.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📸
+                </div>
+
+                <h3>AI Image Detection</h3>
+
+                <p>
+                    Upload a photo and AI can identify
+                    potholes, garbage, leakage and more.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🏛️
+                </div>
+
+                <h3>Smart Department</h3>
+
+                <p>
+                    AI suggests which department should
+                    handle your complaint.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🚦
+                </div>
+
+                <h3>Priority Detection</h3>
+
+                <p>
+                    Automatically identify Low, Medium
+                    and High priority problems.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= REPORT PROBLEM ================= -->
+
+    <section id="report" class="report-section">
+
+        <div class="section-title">
+
+            <h2>📝 Report a Civic Problem</h2>
+
+            <p>
+                Tell NagarMitra AI what is happening in your area.
+            </p>
+
+        </div>
+
+
+        <div class="report-box">
+
+
+            <!-- Problem Description -->
+
+            <label for="problem">
+                Describe Your Problem
+            </label>
+
+            <textarea
+                id="problem"
+                placeholder="Example: Our street lights are not working for 3 days...">
+            </textarea>
+
+
+            <!-- Voice + Location -->
+
+            <div class="action-buttons">
+
+                <button id="voiceBtn">
+                    🎤 Speak Problem
+                </button>
+
+                <button id="locationBtn">
+                    📍 Get My Location
+                </button>
+
+            </div>
+
+
+            <p id="locationText">
+                Location not detected
+            </p>
+
+
+
+            <!-- Category -->
+
+            <label for="category">
+                Problem Category
+            </label>
+
+            <select id="category">
+
+                <option value="auto">
+                    🤖 Let AI Detect
+                </option>
+
+                <option value="road">
+                    🛣️ Road / Pothole
+                </option>
+
+                <option value="garbage">
+                    🗑️ Garbage / Waste
+                </option>
+
+                <option value="streetlight">
+                    💡 Street Light
+                </option>
+
+                <option value="water">
+                    🚰 Water Leakage
+                </option>
+
+                <option value="traffic">
+                    🚦 Traffic / Signal
+                </option>
+
+                <option value="other">
+                    🏙️ Other Civic Issue
+                </option>
+
+            </select>
+
+
+
+            <!-- Photo Upload -->
+
+            <label for="photo">
+                📸 Upload Problem Photo
+            </label>
+
+            <input
+                type="file"
+                id="photo"
+                accept="image/*">
+
+            <div id="imagePreview">
+                Image preview will appear here
+            </div>
+
+
+
+            <!-- Analyze Button -->
+
+            <button id="analyzeBtn" class="analyze-btn">
+
+                🤖 Analyze with NagarMitra AI
+
+            </button>
+
+
+
+            <!-- ================= AI RESULT ================= -->
+
+            <div id="aiResult" class="ai-result">
+
+
+                <h2>
+                    🤖 AI Analysis Result
+                </h2>
+
+
+                <div class="result-item">
+
+                    <span>
+                        Detected Problem
+                    </span>
+
+                    <strong id="detectedProblem">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="result-item">
+
+                    <span>
+                        Suggested Department
+                    </span>
+
+                    <strong id="department">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="result-item">
+
+                    <span>
+                        Priority
+                    </span>
+
+                    <strong id="priority">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <div class="result-item">
+
+                    <span>
+                        AI Impact Score
+                    </span>
+
+                    <strong id="impactScore">
+                        —
+                    </strong>
+
+                </div>
+
+
+
+                <!-- AI Explanation -->
+
+                <div class="ai-explanation">
+
+                    <h3>
+                        💡 Why AI Selected This?
+                    </h3>
+
+                    <p id="aiExplanation">
+
+                        AI explanation will appear here.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- Generated Complaint -->
+
+                <div class="complaint">
+
+                    <h3>
+                        📄 Auto-Generated Complaint
+                    </h3>
+
+                    <p id="complaintText">
+
+                        Your complaint will be generated here.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="complaint-buttons">
+
+                    <button id="copyBtn">
+                        📋 Copy Complaint
+                    </button>
+
+                    <button id="submitBtn">
+                        🚀 Submit Complaint
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COMPLAINT TRACKING ================= -->
+
+    <section id="tracking" class="tracking-section">
+
+        <div class="section-title">
+
+            <h2>
+                🔍 Track Your Complaint
+            </h2>
+
+            <p>
+                Check the current status of your complaint.
+            </p>
+
+        </div>
+
+
+        <div class="tracking-box">
+
+            <input
+                type="text"
+                id="complaintId"
+                placeholder="Enter Complaint ID e.g. NM-123456">
+
+
+            <button id="trackBtn">
+                🔍 Track Complaint
+            </button>
+
+
+            <div id="trackingResult">
+
+                <h3>
+                    Complaint Status
+                </h3>
+
+                <p>
+                    Enter your complaint ID to check status.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= WOMEN SAFETY ================= -->
+
+    <section id="safety" class="safety-section">
+
+        <div class="safety-content">
+
+            <div class="safety-icon">
+                🚨
+            </div>
+
+            <h2>
+                Women Safety Mode
+            </h2>
+
+            <p>
+
+                NagarMitra AI provides quick access to
+                emergency assistance and safety resources.
+
+            </p>
+
+
+            <div class="safety-features">
+
+                <div>
+                    📍
+                    <span>Safe Location</span>
+                </div>
+
+                <div>
+                    🚔
+                    <span>Emergency Services</span>
+                </div>
+
+                <div>
+                    📞
+                    <span>Emergency Contact</span>
+                </div>
+
+                <div>
+                    🛣️
+                    <span>Safer Route</span>
+                </div>
+
+            </div>
+
+
+            <button id="sosBtn" class="sos-btn">
+
+                🚨 EMERGENCY SOS
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= AI WORKFLOW ================= -->
+
+    <section class="workflow">
+
+        <div class="section-title">
+
+            <h2>
+                ⚡ How NagarMitra AI Works
+            </h2>
+
+        </div>
+
+
+        <div class="workflow-container">
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Report
+                </h3>
+
+                <p>
+                    Citizen speaks, types or uploads
+                    a photo of the problem.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Understand
+                </h3>
+
+                <p>
+                    AI analyzes the citizen's
+                    complaint.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Decide
+                </h3>
+
+                <p>
+                    AI identifies department
+                    and priority.
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+                →
+            </div>
+
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Act
+                </h3>
+
+                <p>
+                    Generate complaint and
+                    track resolution.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            🏙️ NagarMitra AI
+
+        </div>
+
+        <p>
+            Speak a Problem. Get the Solution.
+        </p>
+
+        <p class="copyright">
+
+            AI for Smarter Cities • Safer Citizens •
+            Better Communities
+
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript later connect chestham -->
+
+    <script src="script.js"></script>
+
+</body>
+
+              </html>
